@@ -36,7 +36,7 @@ fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
 }
 ```
 lesson learned:
-`.is_empty()` is a function that returns True if the item checked is empty.\ 
-`Vec::new()` creates an empty vector. the `vec![]` is a macro to return an empty vector. \ 
-`.count()` conducts += 1\ 
+`.is_empty()` is a function that returns True if the item checked is empty. \
+`Vec::new()` creates an empty vector. the `vec![]` is a macro to return an empty vector. \
+`.count()` conducts += 1 \
 `.filter(|&&variable|, expression)` allows what it sounds like.

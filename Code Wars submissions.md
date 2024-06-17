@@ -40,3 +40,22 @@ lesson learned:
 `Vec::new()` creates an empty vector. the `vec![]` is a macro to return an empty vector. \
 `.count()` conducts += 1. \
 `.filter(|&&variable|, expression)` allows what it sounds like.
+
+## Return negative
+my solution:
+```
+if n > 0{
+    return -n
+    }
+else{
+    return n
+}
+```
+better submission:
+```
+fn make_negative(n: i32) -> i32 {
+    -n.abs()
+}
+```
+lesson learned: \
+THINK ABOUT METHODS BEFORE DOING THIS SHIT BY HAND. Also basic math is useful.

@@ -59,3 +59,37 @@ fn make_negative(n: i32) -> i32 {
 ```
 lesson learned: \
 THINK ABOUT METHODS BEFORE DOING THIS SHIT BY HAND. Also basic math is useful.
+
+## Basic Math
+my submission:
+```
+if operator == '+'{
+    return value1 + value2
+}
+esle if operator == '-'{
+    return value1 - value2
+}
+else if operator == '*'{
+    return value1 * value2
+}
+else{
+    return value1 / value2
+}
+```
+```
+better submission:
+fn basic_op(operator: char, value1: i32, value2: i32) -> i32 {
+    match operator {
+        '+' => value1 + value2,
+        '-' => value1 - value2,
+        '*' => value1 * value2,
+        '/' => value1 / value2,
+        _ => {
+            panic!("wrong operator!");
+        }
+    }
+}
+```
+lessons learned: \
+`match` keyword does the if this then that bs. \
+`panic!` is a macro for errors.

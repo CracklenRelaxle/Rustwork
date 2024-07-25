@@ -62,7 +62,7 @@ THINK ABOUT METHODS BEFORE DOING THIS SHIT BY HAND. Also basic math is useful.
 
 ## Basic Math
 my submission:
-```
+```rust
 if operator == '+'{
     return value1 + value2
 }
@@ -110,3 +110,4 @@ fn binary_slice_to_number(slice: &[u32]) -> u32 {
     return sum;
 }
 ```
+lesson learned: double gators `>>` do somethin binary.

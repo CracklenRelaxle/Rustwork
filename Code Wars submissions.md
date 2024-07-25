@@ -93,3 +93,20 @@ fn basic_op(operator: char, value1: i32, value2: i32) -> i32 {
 lessons learned: \
 `match` keyword does the if this then that bs. \
 `panic!` is a macro for errors.
+
+## ones and zeroes
+converting binary to decimal:
+my submission:
+```
+fn binary_slice_to_number(slice: &[u32]) -> u32 {
+    let mut var = slice.len() as u32;
+    let mut sum = 0;
+    for i in slice {
+        var -= 1;
+        if i > &0 {
+            sum += u32::pow(2, var);
+            }
+    }
+    return sum;
+}
+``` rust

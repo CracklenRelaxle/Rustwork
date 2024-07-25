@@ -109,4 +109,4 @@ fn binary_slice_to_number(slice: &[u32]) -> u32 {
     }
     return sum;
 }
-``` rust
+```rust

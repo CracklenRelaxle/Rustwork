@@ -1,6 +1,6 @@
 ## Count of posotives / sum of negatives
 my submission:
-```
+```rust
 fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
     if input == []{
         return [].to_vec()
@@ -43,7 +43,7 @@ lesson learned:
 
 ## Return negative
 my solution:
-```
+```rust
 if n > 0{
     return -n
     }
@@ -97,7 +97,7 @@ lessons learned: \
 ## ones and zeroes
 converting binary to decimal:
 my submission:
-```
+```rust
 fn binary_slice_to_number(slice: &[u32]) -> u32 {
     let mut var = slice.len() as u32;
     let mut sum = 0;

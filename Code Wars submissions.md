@@ -111,3 +111,39 @@ fn binary_slice_to_number(slice: &[u32]) -> u32 {
 }
 ```
 lesson learned: double gators `>>` do somethin binary.
+## String incrementer
+WIP
+```rust
+fn increment_string(s: &str) -> String {
+    if ! s.chars().last().unwrap().is_numeric(){
+        let mut newstr = s.to_string();
+        newstr.push('1');
+        return newstr;
+    }
+    else {
+        let mut newstr = s.to_string();
+// get the total number of numbers
+        let mut counter = 0;
+        for i in newstr.chars(){
+            if i.is_numeric(){
+                counter += 1;
+            }
+        }
+//pop characters = to total number of numbers
+        let mut counter2 = 0;
+        let mut nums = "".to_string();
+        while counter2 < counter{
+            nums.push(newstr.chars().last().unwrap());
+            newstr.pop().unwrap();
+            counter2 += 1;
+        }
+//format the numbers
+        nums = nums.chars().rev().collect::<String>();
+//add the number
+        let mut numbers = nums.to_string().parse::<i32>().unwrap();
+        numbers +=1;
+        newstr.push_str(&numbers.to_string());
+        return newstr;
+    }
+}
+```

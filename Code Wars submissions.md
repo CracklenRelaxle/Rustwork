@@ -112,9 +112,15 @@ fn binary_slice_to_number(slice: &[u32]) -> u32 {
 ```
 lesson learned: double gators `>>` do somethin binary.
 ## String incrementer
-WIP
+My try 1:
+NOTE: technically doesnt work, but I cant see what input they are giving me that causes it to fail. 
 ```rust
 fn increment_string(s: &str) -> String {
+    // beat the null string
+    if s.to_string().len() == 0{
+        return "1".to_string();
+    }
+    else{
     if ! s.chars().last().unwrap().is_numeric(){
         let mut newstr = s.to_string();
         newstr.push('1');
@@ -137,13 +143,42 @@ fn increment_string(s: &str) -> String {
             newstr.pop().unwrap();
             counter2 += 1;
         }
-//format the numbers
+        //format the numbers
         nums = nums.chars().rev().collect::<String>();
-//add the number
-        let mut numbers = nums.to_string().parse::<i32>().unwrap();
+        //add the number
+        let mut numbers = nums.to_string().trim().parse::<i32>().unwrap();
         numbers +=1;
         newstr.push_str(&numbers.to_string());
-        return newstr;
+        //return value if the length is correct
+        if newstr.chars().count() == s.chars().count(){
+          //  print!("{}\n",newstr);
+            return newstr;
+        }
+        //get difference between length of og and current string
+        else if newstr.chars().count() < s.chars().count() {
+            let mut counter3 = s.chars().count() - newstr.chars().count();
+            // take numbers off string whether its just numbers or not
+            if ! newstr.chars().nth(0).unwrap().is_numeric() {
+                while  newstr.chars().last().unwrap().is_numeric(){
+                    newstr.pop();
+                }
+            }
+            else{
+                newstr = "".to_string();
+            }
+            //pad 0s
+            while counter3 >= 1{
+                newstr.push('0');
+                counter3 -=1;
+            }
+            //readd numbers
+            newstr.push_str(&numbers.to_string());
+            return newstr;
+        }
+        else {
+            return newstr;
+        }
     }
+}
 }
 ```
